@@ -1,7 +1,6 @@
 import React from 'react';
+import AlbumTemplate from '../../templates/Album';
 
-// import { Container } from './styles';
-
-export default function Album() {
-  return <div />;
+export default function Home() {
+  return <AlbumTemplate />;
 }
