@@ -1,7 +1,14 @@
 import React from 'react';
+import Home from './pages/Home';
+import GlobalStyle from './globalStyles';
 
 function App() {
-  return <h1>Hello, Jeff Campos</h1>;
+  return (
+    <>
+      <GlobalStyle />
+      <Home />
+    </>
+  );
 }
 
 export default App;
