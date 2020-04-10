@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  display: flex;
-  flex-flow: column nowrap;
-  margin-left: 30px;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 30px;
 `;

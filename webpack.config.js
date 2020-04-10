@@ -12,12 +12,15 @@ module.exports = {
       { test: /\.(js)$/, use: 'babel-loader' },
       { test: /\.css$/, use: ['style-loader', 'css-loader'] },
       {
-        test: /\.svg$/i,
+        test: /\.svg$/,
         use: [
+          {
+            loader: 'babel-loader',
+          },
           {
             loader: 'url-loader',
             options: {
-              encoding: false,
+              jsx: true,
             },
           },
         ],

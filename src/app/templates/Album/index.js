@@ -1,7 +1,20 @@
 import React from 'react';
-
-import { Container } from './styles';
+import Theme from '../theme';
+import Brand from '../../atoms/Brand';
+import AlbumContent from '../../organisms/AlbumContent';
+import BackButtom from '../../atoms/BackButton';
+import { Container, Content } from './styles';
 
 export default function AlbumTemplate() {
-  return <div />;
+  return (
+    <Theme>
+      <Container>
+        <Brand />
+        <Content>
+          <BackButtom />
+          <AlbumContent />
+        </Content>
+      </Container>
+    </Theme>
+  );
 }
