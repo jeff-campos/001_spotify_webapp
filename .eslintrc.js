@@ -20,6 +20,7 @@ module.exports = {
   plugins: ["react", "jsx-a11y", "import", "react-hooks", "prettier"],
   rules: {
     "prettier/prettier": "error",
+    "react/prop-types": 0,
     "react/jsx-filename-extension": ["error", { extensions: [".js", ".jsx"] }],
     "import/prefer-default-export": "off",
     "react/jsx-props-no-spreading": "off",
@@ -33,13 +34,12 @@ module.exports = {
     "no-console": ["error", { allow: ["tron"] }],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "import/no-unresolved": [2,{ "caseSensitive": false }],
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
+    "import/no-unresolved": [2,{ "caseSensitive": false }]
   },
   settings: {
     "import/resolver": {
       "babel-plugin-root-import": {
-        rootPathSuffix: "app"
+        rootPathSuffix: "src"
       },
     },
   },

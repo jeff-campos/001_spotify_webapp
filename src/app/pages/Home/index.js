@@ -1,7 +1,6 @@
 import React from 'react';
-
-// import { Container } from './styles';
+import TemplateHome from '../../templates/Home';
 
 export default function Home() {
-  return <div />;
+  return <TemplateHome />;
 }

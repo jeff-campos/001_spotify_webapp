@@ -11,6 +11,24 @@ module.exports = {
     rules: [
       { test: /\.(js)$/, use: 'babel-loader' },
       { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+      {
+        test: /\.svg$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              encoding: false,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader',
+        query: {
+          limit: 8192,
+        },
+      },
     ],
   },
   mode: 'development',
