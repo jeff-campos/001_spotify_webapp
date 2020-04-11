@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Container, Label } from './styles';
 
-export default function Input({ placeholder, label, model }) {
+export default function Input({ placeholder, label, model, action }) {
   const [value, setValue] = useState('');
+
+  useEffect(() => {
+    action(value);
+  }, [action, value]);
+
   return (
     <Container model={model}>
       <Label>{label}</Label>

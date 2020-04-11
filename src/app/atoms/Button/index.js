@@ -2,6 +2,6 @@ import React from 'react';
 
 import { ButtonElement } from './styles';
 
-export default function Button({ label }) {
-  return <ButtonElement onClick={() => {}}>{label}</ButtonElement>;
+export default function Button({ label, action }) {
+  return <ButtonElement onClick={() => action()}>{label}</ButtonElement>;
 }

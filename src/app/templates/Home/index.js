@@ -17,6 +17,9 @@ export default function Home() {
             model="large"
             placeholder="Comece a escrever"
             label="Busque por artista, álbuns ou músicas"
+            action={text => {
+              console.log(text);
+            }}
           />
           <List title="Ábuns buscados recentimente" />
         </Content>

@@ -12,7 +12,7 @@ export function* signIn({ payload }) {
   if (token) {
     api.defaults.headers.Authorization = `Bearer ${token}`;
     yield put(signInSuccess(token));
-    history.push('/album');
+    history.push('/home');
     return;
   }
 
