@@ -18,7 +18,7 @@ export default function Historic(state = INITIAL_STATE, action) {
         break;
       }
       case '@historic/SEARCH_FAILURE': {
-        draft.profile = state.latestSearch;
+        draft.latestSearch = state.latestSearch;
         draft.loading = false;
         break;
       }
