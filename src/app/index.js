@@ -1,12 +1,12 @@
 import React from 'react';
-import Album from './pages/Album';
+import Login from './pages/Login';
 import GlobalStyle from './globalStyles';
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <Album />
+      <Login />
     </>
   );
 }
