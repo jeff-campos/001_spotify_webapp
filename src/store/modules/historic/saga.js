@@ -1,5 +1,4 @@
 import { takeLatest, call, put, all } from 'redux-saga/effects';
-import { toast } from 'react-toastify';
 
 import api from '../../../app/services/api';
 
@@ -17,11 +16,13 @@ export function* searchRequest({ payload }) {
     });
     yield put(searchSuccess(response.data));
   } catch (err) {
-    toast.error(
-      'Você foi deslogado porque seu token está expirado ou inválido'
-    );
+    const {
+      data: {
+        error: { status },
+      },
+    } = err.response;
     yield put(searchFailure());
-    yield put(signOut());
+    yield put(signOut(status));
   }
 }
 
