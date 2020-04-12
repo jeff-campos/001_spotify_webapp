@@ -4,11 +4,11 @@ import AlbumList from '../../molecules/AlbumList';
 
 import { Container } from './styles';
 
-export default function List({ title }) {
+export default function List({ title, items }) {
   return (
     <Container>
       <Title text={title} />
-      <AlbumList />
+      <AlbumList items={items} />
     </Container>
   );
 }

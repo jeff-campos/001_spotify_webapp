@@ -1,12 +1,13 @@
 import React from 'react';
 
-import { Container, ButtonLink, Image } from './styles';
+import { Container, ButtonLink, Image, Splash } from './styles';
 
-export default function AlbumItem({ artist, name, image }) {
+export default function AlbumItem({ id, album, img, artist, type }) {
   return (
     <Container>
-      <Image src={image} alt={name} />
-      <ButtonLink>{name}</ButtonLink>
+      <Splash>{type}</Splash>
+      <Image src={img} alt={album} />
+      <ButtonLink onClick={() => console.log(id)}>{album}</ButtonLink>
       <small>{artist}</small>
     </Container>
   );
