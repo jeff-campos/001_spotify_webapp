@@ -1,11 +1,11 @@
 import produce from 'immer';
 
 const INITIAL_STATE = {
-  latestSearch: [],
+  latestSearch: {},
   loading: false,
 };
 
-export default function Historic(state = INITIAL_STATE, action) {
+export default function historic(state = INITIAL_STATE, action) {
   return produce(state, draft => {
     switch (action.type) {
       case '@historic/SEARCH_REQUEST': {
