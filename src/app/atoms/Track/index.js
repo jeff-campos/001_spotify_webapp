@@ -1,16 +1,22 @@
 import React from 'react';
 
 import { Container, Line, NameTrack, Lot } from './styles';
+import { millisToMin } from '../../helpers/formatData';
 
-export default function Track({ number, name, time }) {
+export default function Track({
+  track_number,
+  duration_ms,
+  preview_url,
+  name,
+}) {
   return (
     <Container>
       <Line>
-        <Lot>{number}</Lot>
+        <Lot>{track_number}</Lot>
         <NameTrack>
           <button type="button">{name}</button>
         </NameTrack>
-        <Lot>{time}</Lot>
+        <Lot>{millisToMin(duration_ms)}</Lot>
       </Line>
     </Container>
   );
