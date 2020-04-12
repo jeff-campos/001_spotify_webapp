@@ -11,7 +11,7 @@ export function* searchRequest({ payload }) {
       params: {
         q: payload.data,
         type: 'track,album',
-        limit: 5,
+        limit: 20,
       },
     });
     yield put(searchSuccess(response.data));

@@ -5,6 +5,11 @@ export const Container = styled.div`
   flex-flow: column nowrap;
   align-items: center;
   position: relative;
+  padding: 40px;
+  transition: background 0.4s ease;
+  &:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
   small {
     color: ${({ theme }) => theme.color.dark};
     font-size: ${({ theme }) => theme.size.superSmall};
@@ -23,8 +28,8 @@ export const ButtonLink = styled.button`
 
 export const Image = styled.img`
   width: 100%;
-  max-width: 230px;
-  height: 230px;
+  max-width: 250px;
+  cursor: pointer;
 `;
 
 export const Splash = styled.div`
@@ -32,10 +37,11 @@ export const Splash = styled.div`
   justify-content: center;
   align-items: center;
   position: absolute;
-  right: -10px;
-  top: -10px;
-  padding: 5px 10px;
-  background: ${({ theme }) => theme.color.dark};
-  color: ${({ theme }) => theme.color.clean};
-  font-size: ${({ theme }) => theme.size.small};
+  right: 10px;
+  top: 10%;
+  padding: 5px;
+  border-radius: 4px 0 4px 0;
+  background: ${({ theme }) => theme.color.black};
+  color: ${({ theme }) => theme.color.dark};
+  font-size: ${({ theme }) => theme.size.superSmall};
 `;

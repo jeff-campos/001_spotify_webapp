@@ -8,7 +8,11 @@ export default function AlbumItem({ id, album, img, artist, type }) {
   return (
     <Container>
       {type && <Splash>{type}</Splash>}
-      <Image src={img} alt={album} />
+      <Image
+        src={img}
+        alt={album}
+        onClick={() => history.push(`/album/${id}`)}
+      />
       <ButtonLink onClick={() => history.push(`/album/${id}`)}>
         {album}
       </ButtonLink>
