@@ -11,7 +11,7 @@ export default function Routes() {
     <Switch>
       <Route path="/" exact component={Login} />
       <Route path="/home" component={Home} isPrivate />
-      <Route path="/album" component={Album} isPrivate />
+      <Route path="/album/:id" component={Album} isPrivate />
     </Switch>
   );
 }

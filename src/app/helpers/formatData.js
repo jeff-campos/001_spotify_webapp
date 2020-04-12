@@ -1,4 +1,4 @@
-export default function handleFormatData(data) {
+export function handleFormatData(data) {
   const tracks = data
     ? data.tracks.items.map(({ album, type, artists }) => ({
         type,
@@ -20,4 +20,36 @@ export default function handleFormatData(data) {
     : [];
 
   return [...albums, ...tracks];
+}
+
+export function handleFormatAlbum(data) {
+  const tracks = data
+    ? data.tracks.items.map(
+        ({ track_number, duration_ms, preview_url, name }) => ({
+          track_number,
+          duration_ms,
+          preview_url,
+          name,
+        })
+      )
+    : [];
+  const album = data
+    ? {
+        type: false,
+        album: data.name,
+        img: data.images[0].url,
+        artist: data.artists[0].name,
+      }
+    : {};
+
+  return {
+    tracks,
+    album,
+  };
+}
+
+export function millisToMin(millis) {
+  const minutes = Math.floor(millis / 60000);
+  const seconds = ((millis % 60000) / 1000).toFixed(0);
+  return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 }

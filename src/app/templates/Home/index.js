@@ -6,7 +6,7 @@ import Brand from '../../atoms/Brand';
 import Input from '../../atoms/Input';
 import List from '../../organisms/List';
 
-import handleFormatData from '../../helpers/formatData';
+import { handleFormatData } from '../../helpers/formatData';
 
 import { searchRequest } from '../../../store/modules/historic/actions';
 
