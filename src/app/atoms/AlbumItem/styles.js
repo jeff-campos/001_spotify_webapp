@@ -5,7 +5,7 @@ export const Container = styled.div`
   flex-flow: column nowrap;
   align-items: center;
   position: relative;
-  padding: 40px;
+  padding: 25px;
   transition: background 0.4s ease;
   &:hover {
     background: rgba(0, 0, 0, 0.5);

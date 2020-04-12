@@ -1,11 +1,17 @@
+const dataFake = {
+  img: 'https://dummyimage.com/200x200/000/ffffff.jpg&text=Sem+imagem',
+  album: 'Álbum sem nome',
+  artist: 'Sem nome do artista',
+};
+
 export function handleFormatData(data) {
   const tracks = data
     ? data.tracks.items.map(({ album, type, artists }) => ({
         type,
         id: album.id,
         album: album.name,
-        img: album.images[0].url,
-        artist: artists[0].name,
+        img: album.images[0].url || dataFake.img,
+        artist: artists[0].name || dataFake.artist,
       }))
     : [];
 
@@ -14,8 +20,8 @@ export function handleFormatData(data) {
         type,
         id,
         album: name,
-        img: images[1].url,
-        artist: artists[0].name,
+        img: images[0].url || dataFake.img,
+        artist: artists[0].name || dataFake.artist,
       }))
     : [];
 
@@ -38,8 +44,8 @@ export function handleFormatAlbum(data) {
         id: data.id,
         type: false,
         album: data.name,
-        img: data.images[1].url,
-        artist: data.artists[0].name,
+        img: data.images[0].url || dataFake.img,
+        artist: data.artists[0].name || dataFake.name,
       }
     : {};
 

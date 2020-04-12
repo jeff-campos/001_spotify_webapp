@@ -3,6 +3,7 @@ import produce from 'immer';
 const INITIAL_STATE = {
   latestSearch: {},
   loading: false,
+  userAlbuns: [],
 };
 
 export default function historic(state = INITIAL_STATE, action) {
@@ -20,6 +21,14 @@ export default function historic(state = INITIAL_STATE, action) {
       case '@historic/SEARCH_FAILURE': {
         draft.latestSearch = state.latestSearch;
         draft.loading = false;
+        break;
+      }
+      case '@historic/USER_SET_ALBUM': {
+        draft.userAlbuns = state.userAlbuns.every(
+          album => album.id !== action.payload.album.id
+        )
+          ? [...state.userAlbuns, action.payload.album]
+          : state.userAlbuns;
         break;
       }
       default:
