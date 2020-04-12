@@ -8,13 +8,24 @@ export default function Track({
   duration_ms,
   preview_url,
   name,
+  action,
 }) {
   return (
     <Container>
       <Line>
         <Lot>{track_number}</Lot>
         <NameTrack>
-          <button type="button">{name}</button>
+          <button
+            type="button"
+            onClick={() =>
+              action({
+                name,
+                preview_url,
+              })
+            }
+          >
+            {name}
+          </button>
         </NameTrack>
         <Lot>{millisToMin(duration_ms)}</Lot>
       </Line>
