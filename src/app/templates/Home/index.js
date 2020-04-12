@@ -32,7 +32,7 @@ export default function Home() {
     }
     if (items.data && !value) {
       return {
-        title: 'Álbuns buscados recentemente',
+        title: 'Álbuns e músicas buscados recentemente',
         items: handleFormatData(items.data),
       };
     }
@@ -49,7 +49,7 @@ export default function Home() {
         <Content>
           <Input
             model="large"
-            placeholder="Comece a escrever"
+            placeholder="Comece a escrever..."
             label="Busque por artista, álbuns ou música"
             action={text => setValue(text)}
           />

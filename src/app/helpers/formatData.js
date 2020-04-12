@@ -14,7 +14,7 @@ export function handleFormatData(data) {
         type,
         id,
         album: name,
-        img: images[0].url,
+        img: images[1].url,
         artist: artists[0].name,
       }))
     : [];
@@ -35,9 +35,10 @@ export function handleFormatAlbum(data) {
     : [];
   const album = data
     ? {
+        id: data.id,
         type: false,
         album: data.name,
-        img: data.images[0].url,
+        img: data.images[1].url,
         artist: data.artists[0].name,
       }
     : {};
