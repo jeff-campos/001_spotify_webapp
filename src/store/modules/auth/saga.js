@@ -29,8 +29,18 @@ export function setToken({ payload }) {
   }
 }
 
-export function signOut() {
-  history.push('/');
+export function signOut({ payload }) {
+  if (payload.status === 401) {
+    toast.error(
+      'Você foi deslogado porque seu token está expirado ou inválido'
+    );
+    return history.push('/');
+  }
+  if (payload.status === 403) {
+    toast.error('A operacão falhou');
+    return history.push('/home');
+  }
+  return history.push('/');
 }
 
 export default all([

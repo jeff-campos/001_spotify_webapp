@@ -18,8 +18,9 @@ export function signFailure() {
   };
 }
 
-export function signOut() {
+export function signOut(status) {
   return {
     type: '@auth/SIGN_OUT',
+    payload: { status },
   };
 }
