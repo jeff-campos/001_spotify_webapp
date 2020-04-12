@@ -12,6 +12,7 @@ import history from '../../services/history';
 import { handleFormatAlbum } from '../../helpers/formatData';
 
 import { signOut } from '../../../store/modules/auth/actions';
+import { userSetAlbum } from '../../../store/modules/historic/actions';
 
 export default function AlbumTemplate() {
   const [album, setAlbum] = useState({});
@@ -23,6 +24,7 @@ export default function AlbumTemplate() {
       try {
         const response = await api.get(`albums/${id}`);
         setAlbum(handleFormatAlbum(response.data));
+        dispatch(userSetAlbum(handleFormatAlbum(response.data)));
       } catch (err) {
         const {
           data: {

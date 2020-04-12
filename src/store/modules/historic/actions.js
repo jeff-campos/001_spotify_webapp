@@ -18,6 +18,13 @@ export function searchFailure() {
   };
 }
 
+export function userSetAlbum({ album }) {
+  return {
+    type: '@historic/USER_SET_ALBUM',
+    payload: { album },
+  };
+}
+
 export function setAlbum(data) {
   return {
     type: '@historic/SET_ALBUM',

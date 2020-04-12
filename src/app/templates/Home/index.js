@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import Theme from '../theme';
 import Brand from '../../atoms/Brand';
 
@@ -7,7 +8,6 @@ import Input from '../../atoms/Input';
 import List from '../../organisms/List';
 
 import { handleFormatData } from '../../helpers/formatData';
-
 import { searchRequest } from '../../../store/modules/historic/actions';
 
 import { Container, Content } from './styles';
@@ -15,7 +15,9 @@ import { Container, Content } from './styles';
 export default function Home() {
   const [value, setValue] = useState('');
   const dispatch = useDispatch();
-  const items = useSelector(state => state.historic.latestSearch);
+  const { userAlbuns, loading, latestSearch: albums } = useSelector(
+    state => state.historic
+  );
 
   useEffect(() => {
     if (value) {
@@ -24,28 +26,42 @@ export default function Home() {
   }, [dispatch, value]);
 
   const propsList = useMemo(() => {
-    if (!items.data && !value) {
+    if (albums && !albums.data && !value) {
       return {
         title: '',
         items: [],
       };
     }
-    if (items.data && !value) {
+    if (albums && albums.data && !value) {
       return {
         title: 'Álbuns e músicas buscados recentemente',
-        items: handleFormatData(items.data),
+        items: handleFormatData(albums.data),
+      };
+    }
+
+    return {
+      title: `Principais resultados encontrados para: ${value}`,
+      items: handleFormatData(albums.data),
+    };
+  }, [albums, value]);
+
+  const propsUserAlbuns = useMemo(() => {
+    if (!userAlbuns.length > 0) {
+      return {
+        title: '',
+        items: [],
       };
     }
     return {
-      title: `Principais resultados encontrados para: ${value}`,
-      items: handleFormatData(items.data),
+      title: 'Últimos álbuns que você visitou',
+      items: userAlbuns,
     };
-  }, [items.data, value]);
+  }, [userAlbuns]);
 
   return (
     <Theme>
       <Container>
-        <Brand />
+        <Brand loading={loading} />
         <Content>
           <Input
             model="large"
@@ -53,7 +69,8 @@ export default function Home() {
             label="Busque por artista, álbuns ou música"
             action={text => setValue(text)}
           />
-          {items.data && <List {...propsList} />}
+          {!value && <List {...propsUserAlbuns} />}
+          <List {...propsList} />
         </Content>
       </Container>
     </Theme>
