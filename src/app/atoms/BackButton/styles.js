@@ -5,7 +5,7 @@ export const Container = styled.button`
   align-items: center;
   background: transparent;
   border: none;
-  margin: 30px 0;
+  margin: 20px 0 50px 0;
   span {
     color: ${({ theme }) => theme.color.clean};
     font-size: ${({ theme }) => theme.size.small};

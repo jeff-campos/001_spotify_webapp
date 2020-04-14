@@ -53,7 +53,7 @@ export default function Home() {
       };
     }
     return {
-      title: 'Últimos álbuns que você visitou',
+      title: 'Álbuns que você visitou',
       items: userAlbuns,
     };
   }, [userAlbuns]);
