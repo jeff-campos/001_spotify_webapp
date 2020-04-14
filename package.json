@@ -13,12 +13,14 @@
     ]
   },
   "scripts": {
-    "create": "webpack",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "build:hml": "webpack --config webpack.hml.config.js",
+    "build:prd": "webpack --config webpack.prd.config.js"
   },
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
     "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
     "file-loader": "^6.0.0",
     "history": "^4.10.1",
     "immer": "^6.0.3",
@@ -43,6 +45,7 @@
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.1.0",
     "babel-plugin-root-import": "^6.4.1",
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.5.1",
     "customize-cra": "^0.9.1",
     "eslint": "^6.7.2",
