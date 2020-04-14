@@ -1,6 +1,6 @@
-const dsv = require('./webpack.dsv.config.js');
-const hml = require('./webpack.hml.config.js');
-const prd = require('./webpack.prd.config.js');
+const dsv = require('./config/webpack.dsv.config.js');
+const hml = require('./config/webpack.hml.config.js');
+const prd = require('./config/webpack.prd.config.js');
 
 let config;
 

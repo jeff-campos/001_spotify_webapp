@@ -36,12 +36,5 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "import/no-unresolved": [2,{ "caseSensitive": false }],
-  },
-  settings: {
-    "import/resolver": {
-      "babel-plugin-root-import": {
-        rootPathSuffix: "src"
-      },
-    },
-  },
+  }
 };

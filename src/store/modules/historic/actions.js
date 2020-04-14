@@ -24,10 +24,3 @@ export function userSetAlbum({ album }) {
     payload: { album },
   };
 }
-
-export function setAlbum(data) {
-  return {
-    type: '@historic/SET_ALBUM',
-    payload: { data },
-  };
-}
