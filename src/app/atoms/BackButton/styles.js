@@ -6,6 +6,11 @@ export const Container = styled.button`
   background: transparent;
   border: none;
   margin: 20px 0 50px 0;
+  @media (max-width: 768px) {
+    position: fixed;
+    top: 30px;
+    right: 20px;
+  }
   span {
     color: ${({ theme }) => theme.color.clean};
     font-size: ${({ theme }) => theme.size.small};

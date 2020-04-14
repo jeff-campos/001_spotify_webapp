@@ -49,6 +49,7 @@ module.exports = {
       },
     ],
   },
+  mode: 'statement',
   devServer: {
     historyApiFallback: true,
   },

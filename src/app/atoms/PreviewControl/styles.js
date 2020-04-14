@@ -22,6 +22,17 @@ export const Container = styled.div`
   bottom: 0;
   padding: 10px 80px;
   animation: ${animate} 0.3s ease-in;
+  @media (max-width: 768px) {
+    flex-flow: column nowrap;
+    padding: 10px;
+    img {
+      width: 40px;
+      height: 40px;
+      &:last-child {
+        display: none;
+      }
+    }
+  }
   img {
     width: 60px;
     height: 60px;
@@ -32,10 +43,15 @@ export const AlbumContent = styled.div`
   display: flex;
   align-items: center;
   flex-basis: 20%;
+  @media (max-width: 768px) {
+    flex-basis: 100%;
+    margin: 20px;
+  }
   & > div {
     display: flex;
     flex-flow: column nowrap;
     margin-left: 15px;
+
     span {
       font-weight: 700;
       font-size: ${({ theme }) => theme.size.small};
@@ -48,4 +64,7 @@ export const AlbumContent = styled.div`
 `;
 export const AudioContent = styled.div`
   flex-basis: 33%;
+  @media (max-width: 768px) {
+    flex-basis: 100%;
+  }
 `;

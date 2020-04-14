@@ -27,6 +27,9 @@ export const Container = styled.div`
   small {
     color: ${({ theme }) => theme.color.dark};
     font-size: ${({ theme }) => theme.size.medium};
+    @media (max-width: 450px) {
+      font-size: ${({ theme }) => theme.size.superSmall};
+    }
   }
   animation: ${animate} 0.4s linear;
 `;
@@ -36,6 +39,9 @@ export const ButtonLink = styled.button`
   color: ${({ theme }) => theme.color.light};
   font-size: ${({ theme }) => theme.size.medium};
   margin: 10px 0;
+  @media (max-width: 450px) {
+    font-size: ${({ theme }) => theme.size.superSmall};
+  }
   &:hover {
     text-decoration: underline;
   }
@@ -45,6 +51,10 @@ export const Image = styled.img`
   transition: all 0.2s linear;
   width: 100%;
   cursor: pointer;
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 200px;
+  }
 `;
 
 export const Splash = styled.div`
