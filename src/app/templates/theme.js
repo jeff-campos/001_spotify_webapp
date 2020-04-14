@@ -13,6 +13,7 @@ const theme = {
     large: '24px',
     medium: '18px',
     small: '16px',
+    superSmall: '14px',
   },
 };
 

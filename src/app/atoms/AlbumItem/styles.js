@@ -16,14 +16,20 @@ export const Container = styled.div`
   flex-flow: column nowrap;
   align-items: center;
   position: relative;
-  padding: 25px;
-  transition: background 0.4s ease;
+  transition: all 0.2s linear;
   &:hover {
     background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    img {
+      border-radius: 100%;
+    }
   }
   small {
     color: ${({ theme }) => theme.color.dark};
-    font-size: ${({ theme }) => theme.size.superSmall};
+    font-size: ${({ theme }) => theme.size.medium};
+    @media (max-width: 450px) {
+      font-size: ${({ theme }) => theme.size.superSmall};
+    }
   }
   animation: ${animate} 0.4s linear;
 `;
@@ -31,17 +37,24 @@ export const ButtonLink = styled.button`
   background: transparent;
   border: none;
   color: ${({ theme }) => theme.color.light};
-  font-size: ${({ theme }) => theme.size.superSmall};
+  font-size: ${({ theme }) => theme.size.medium};
   margin: 10px 0;
+  @media (max-width: 450px) {
+    font-size: ${({ theme }) => theme.size.superSmall};
+  }
   &:hover {
     text-decoration: underline;
   }
 `;
 
 export const Image = styled.img`
+  transition: all 0.2s linear;
   width: 100%;
-  max-width: 250px;
   cursor: pointer;
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 200px;
+  }
 `;
 
 export const Splash = styled.div`
@@ -49,8 +62,8 @@ export const Splash = styled.div`
   justify-content: center;
   align-items: center;
   position: absolute;
-  right: 10px;
-  top: 10%;
+  right: 5px;
+  top: 5px;
   padding: 5px;
   border-radius: 4px 0 4px 0;
   background: ${({ theme }) => theme.color.black};

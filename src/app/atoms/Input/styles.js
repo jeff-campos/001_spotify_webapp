@@ -20,6 +20,9 @@ export const Container = styled.div`
       return css`
         font-size: ${({ theme }) => theme.size.superLarge};
         color: ${({ theme }) => theme.color.dark};
+        @media (max-width: 450px) {
+          font-size: ${({ theme }) => theme.size.large};
+        }
       `;
     }};
   }

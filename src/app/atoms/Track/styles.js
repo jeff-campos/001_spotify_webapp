@@ -12,11 +12,19 @@ export const Line = styled.div`
 
 export const NameTrack = styled.div`
   flex-basis: 90%;
+  @media (max-width: 450px) {
+    flex-basis: 100%;
+  }
   button {
     background: transparent;
     border: none;
+    text-align: left;
     color: ${({ theme }) => theme.color.clean};
     font-size: ${({ theme }) => theme.size.small};
+    @media (max-width: 450px) {
+      font-size: ${({ theme }) => theme.size.superSmall};
+      text-align: left;
+    }
     &:hover {
       text-decoration: underline;
     }
