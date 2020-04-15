@@ -14,6 +14,7 @@ export default function Input({ placeholder, label, model, action }) {
       <Label>{label}</Label>
       <input
         type="text"
+        aria-label="input-default"
         placeholder={placeholder}
         value={value}
         onChange={event => setValue(event.target.value)}
