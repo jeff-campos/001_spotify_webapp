@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import { Container, Label } from './styles';
 
 export default function Input({ placeholder, label, model, action }) {
