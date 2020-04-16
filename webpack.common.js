@@ -50,7 +50,7 @@
      }),
    ],
    output: {
-   filename: 'index.bundle.js',
+   filename: '[name].bundle.js',
      path: path.resolve(__dirname, 'build'),
    },
  };

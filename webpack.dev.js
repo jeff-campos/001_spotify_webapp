@@ -3,7 +3,7 @@
 
  module.exports = merge(common, {
    mode: 'development',
-   devtool: false,
+   devtool: 'inline-source-map',
    devServer: {
      contentBase: './dist',
    },
