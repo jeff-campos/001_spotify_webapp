@@ -20,11 +20,9 @@
     ]
   },
   "scripts": {
-    "start": "webpack-dev-server --open",
     "test": "jest --watch",
-    "build:dsv": "webpack --config ./config/webpack.dsv.config.js",
-    "build:hml": "webpack --config ./config/webpack.hml.config.js",
-    "build:prd": "webpack --config ./config/webpack.prd.config.js"
+    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "jest": {
     "verbose": true,
@@ -85,6 +83,7 @@
     "url-loader": "^4.1.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "^4.2.2"
   }
 }
