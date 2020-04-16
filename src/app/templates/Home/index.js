@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import useDebounce  from '../../helpers/debounce'
 
 import Theme from '../theme';
 import Brand from '../../atoms/Brand';
@@ -18,12 +19,13 @@ export default function Home() {
   const { userAlbuns, loading, latestSearch: albums } = useSelector(
     state => state.historic
   );
+  const debouncedSearch = useDebounce(value, 500);
 
   useEffect(() => {
-    if (value) {
+    if (debouncedSearch) {
       dispatch(searchRequest(value));
     }
-  }, [dispatch, value]);
+  }, [dispatch, debouncedSearch]);
 
   const propsList = useMemo(() => {
     if (albums && !albums.data && !value) {

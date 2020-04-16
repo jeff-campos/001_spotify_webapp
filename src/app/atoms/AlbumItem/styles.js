@@ -16,10 +16,8 @@ export const Container = styled.div`
   flex-flow: column nowrap;
   align-items: center;
   position: relative;
-  transition: all 0.2s linear;
+  transition: all 0.1s linear;
   &:hover {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 15px;
     img {
       border-radius: 100%;
     }
