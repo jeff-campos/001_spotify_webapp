@@ -9,7 +9,7 @@ const DefinePlugin = new Webpack.DefinePlugin({
   },
 });
 const CleanPlugin = new CleanWebpackPlugin({
-  cleanAfterEveryBuildPatterns: ['dist'],
+  cleanAfterEveryBuildPatterns: ['build'],
 });
 const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
   template: 'dist/index.html',
@@ -18,7 +18,7 @@ const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '..', 'build'),
     filename: 'index_bundle.js',
     publicPath: '/',
   },

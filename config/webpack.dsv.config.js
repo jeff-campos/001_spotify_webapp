@@ -12,7 +12,7 @@ const envKeys = Object.keys(env).reduce((prev, next) => {
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '..', 'build'),
     filename: 'index_bundle.js',
     publicPath: '/',
   },
