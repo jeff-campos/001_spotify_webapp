@@ -5,7 +5,7 @@ Esse foi um teste enviado para um processo seletivo na XP investimentos.
 #Para rodar o projeto: 
 yarn ou npm 'start'
 
-#Para rodas os testes:
+#Para rodar os testes:
 yarn ou npm 'test'
 
 #Para gerar um build:
